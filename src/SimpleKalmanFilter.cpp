@@ -36,11 +36,6 @@ float SimpleKalmanFilter::updateEstimate(float mea)
   return _current_estimate;
 }
 
-void SimpleKalmanFilter::enableAdaptiveProcessNoise(bool enable)
-{
-  _adaptive_q = enable;  // Enable or disable adaptive process noise
-}
-
 void SimpleKalmanFilter::setMeasurementError(float mea_e)
 {
   _err_measure = mea_e;
