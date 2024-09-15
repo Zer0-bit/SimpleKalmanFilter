@@ -11,7 +11,7 @@ class SimpleKalmanFilter
 {
 
 public:
-  SimpleKalmanFilter(float mea_e, float est_e, float q);
+  SimpleKalmanFilter(float mea_e, float est_e, float q, bool adapt_q);
   float updateEstimate(float mea);
   void setMeasurementError(float mea_e);
   void setEstimateError(float est_e);
@@ -26,6 +26,7 @@ private:
   float _current_estimate = 0;
   float _last_estimate = 0;
   float _kalman_gain = 0;
+  bool _adaptive_q = false;
 };
 
 #endif
