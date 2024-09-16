@@ -24,8 +24,7 @@ float SimpleKalmanFilter::updateEstimate(float mea)
   // Dynamically adjust the process noise based on the measurement difference
   if (_adaptive_q)
   {
-    // Example logic to adjust process noise based on the rate of change
-    _q = fmin(1.0f, mea_diff * 0.05); // Adjust this scaling factor to control sensitivity
+    _q = fmin(1.0f, mea_diff * 0.5); // Adjust this scaling factor to control sensitivity
   }
 
   _kalman_gain = _err_estimate / (_err_estimate + _err_measure);
